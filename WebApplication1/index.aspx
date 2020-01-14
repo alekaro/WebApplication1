@@ -13,7 +13,7 @@
     <form id="form1" runat="server">
         <div>
             <asp:Table ID="Table1" runat="server" Width="100%">
-                <asp:TableRow runat="server">
+                <asp:TableRow runat="server" BackColor="Black" ForeColor="White">
                     <asp:TableCell runat="server" CssClass="d1">
                         <asp:HyperLink id="hyperlink1" NavigateUrl="index.aspx" Text="" runat="server"><asp:Image ID="Image1" runat="server" Height="100px" ImageUrl="~/img/logo.png" Width="100px" />
                         </asp:HyperLink></asp:TableCell>
@@ -21,7 +21,7 @@
                     <asp:TableCell runat="server" CssClass="d3"></asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow runat="server">
-                    <asp:TableCell runat="server" CssClass="d1">
+                    <asp:TableCell runat="server" CssClass="d1" BackColor="#FF9900">
                         <asp:Menu ID="Menu1" runat="server">
                         <Items>
                             <asp:MenuItem Text="Historia gitary" Value="Historia gitary"></asp:MenuItem>
@@ -33,6 +33,7 @@
                     </asp:Menu>
                     </asp:TableCell>
                     <asp:TableCell runat="server" CssClass="d2">
+                <div id="mr-center">
                         <section id="main-section">
                     <article class="xxx">
                         <h1 id="index0">Rodzaje gitar</h1>
@@ -134,8 +135,41 @@
 
                     </article>
                 </section>
+            </div>
                     </asp:TableCell>
-                    <asp:TableCell runat="server" CssClass="d3"></asp:TableCell>
+                    <asp:TableCell runat="server" CssClass="d3" BackColor="#999999">
+                        <div id="mr-right">
+                    <div id="st">
+                    <h2>Spis Treści</h2>
+                    <nav>
+                        <ol>
+                            <li><a href="#anchor0">Gitary akustyczne</a>
+                                <ul>
+                                    <li><a href="#anchor1">Gitara barokowa</a></li>
+                                    <li><a href="#anchor2">Gitara klasyczna</a></li>
+                                    <li><a href="#anchor3">Gitara akustyczna</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#anchor4">Gitary akustyczne z wbudowanym mikrofonem lub przetwornikiem</a></li>
+                            <li><a href="#anchor5">Gitary elektryczne</a>
+                                <ul>
+                                    <li><a href="#anchor6">Gitara elektryczna</a></li>
+                                    <li><a href="#anchor7">Gitara basowa</a></li>
+                                    <li><a href="#anchor8">Gitara elektroklasyczna</a></li>
+                                    <li><a href="#anchor9">Cigar Box Guitar</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#anchor10">Inne gitary</a>
+                                <ul>
+                                    <li><a href="#anchor11">Basowa akustyczna</a></li>
+                                    <li><a href="#anchor12">gitara wielogryfowa</a></li>
+                                </ul>
+                            </li>
+                        </ol>
+                        </nav>
+                    </div>
+                    </div>
+                    </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow runat="server">
                     <asp:TableCell runat="server" CssClass="d1"></asp:TableCell>
