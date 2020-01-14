@@ -15,7 +15,7 @@
             <asp:Table ID="Table1" runat="server" Width="100%">
                 <asp:TableRow runat="server" BackColor="Black" ForeColor="White">
                     <asp:TableCell runat="server" CssClass="d1">
-                        <asp:HyperLink id="hyperlink1" NavigateUrl="index.aspx" Text="" runat="server"><asp:Image ID="Image1" runat="server" Height="100px" ImageUrl="~/img/logo.png" Width="100px" />
+                        <asp:HyperLink id="hyperlink1" NavigateUrl="index.aspx" Text="" runat="server"><asp:Image ID="Image1" CssClass="logo" runat="server" Height="100px" ImageUrl="~/img/logo.png" Width="100px" />
                         </asp:HyperLink></asp:TableCell>
                     <asp:TableCell runat="server" CssClass="d2"><h1 class="center">Katalog gitarowy</h1></asp:TableCell>
                     <asp:TableCell runat="server" CssClass="d3"></asp:TableCell>
@@ -100,7 +100,7 @@
                         </p>
                         <br />
                         <p id="anchor12">
-                            Gitara wielogryfowa <br> Jest to szersza wersja gitary elektrycznej posiadająca więcej niż jeden gryf (najczęściej dwa).
+                            Gitara wielogryfowa <br /> Jest to szersza wersja gitary elektrycznej posiadająca więcej niż jeden gryf (najczęściej dwa).
                         </p>
                     </article>
                 </section>
@@ -109,7 +109,7 @@
                     <section class="big-header">
                         <h1 id="index1">Nowinki w świecie gitar:</h1>
                     </section>
-                    <br>
+                    <br/>
                     <article>
                         <details>
                             <summary style="font-family:'Franklin Gothic Medium'; font-size: 200%;display: inline;" id="index2">
@@ -122,13 +122,13 @@
                             <p>cytat z oficjalnej strony <strong>Jackson</strong></p>
                             <p>Jak mówi gitarzysta zespołu Gojira <mark>" I believe, with Jackson we can get through
                                     another great adventure once again"</mark></p>
-                            <br>
+                            <br/>
                             <aside>
                                 <p> Nawiązując do słów artysty, czyżby szykował się kolejny album francuskiego zespołu? Dajcie znać w komentarzach co myślicie! A już niedługo kolejna dawka informacji ze świata muzycznego.
                                 </p>
                             </aside>
                         </details>
-                        <br>
+                        <br/>
 
                         <asp:hyperlink id="imgurs" runat="server" href="https://www.jacksonguitars.com/artists/christian-andreu-bio" title="Zobacz na stronie!">
                             <asp:image runat="server" class="imgur1" width="350" height="350" imageurl="img/jackson-gojira.jpg" alt="ups! nie wczytano zdjęcia" />
@@ -173,9 +173,14 @@
                     </div>
                     </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow runat="server">
+                <asp:TableRow runat="server" BackColor="#3399FF">
                     <asp:TableCell runat="server" CssClass="d1"></asp:TableCell>
-                    <asp:TableCell runat="server" CssClass="d2"></asp:TableCell>
+                    <asp:TableCell runat="server" CssClass="d2">
+                        &copy; Copyright. All right reserved
+
+                            <p>Newsletter:</p>
+                            <a href="newsletter.html"><img src="img/newsletter.png" height="30" width="30" alt="Newsletter" /></a>
+                    </asp:TableCell>
                     <asp:TableCell runat="server" CssClass="d3"></asp:TableCell>
                 </asp:TableRow>
             </asp:Table>
