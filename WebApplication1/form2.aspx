@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="info.aspx.cs" Inherits="WebApplication1.info" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="form2.aspx.cs" Inherits="WebApplication1.form2" %>
 
 <!DOCTYPE html>
 
@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
 <body>
-    <form id="form1" runat="server">
         <div>
             <asp:Table ID="Table1" runat="server" Width="100%">
                 <asp:TableRow runat="server" BackColor="Black" ForeColor="White">
@@ -23,21 +22,57 @@
                 <asp:TableRow runat="server">
                     <asp:TableCell runat="server" CssClass="d1" BackColor="#FF9900">
                     <div id="mr-left">
-                        <asp:Menu ID="Menu1" runat="server">
-                        <Items>
-                            <asp:MenuItem Text="Historia gitary" Value="Historia gitary"></asp:MenuItem>
-                            <asp:MenuItem Text="Kalkulator" Value="Kalkulator"></asp:MenuItem>
-                            <asp:MenuItem Text="Sandbox" Value="Sandbox"></asp:MenuItem>
-                            <asp:MenuItem Text="O nas" Value="O nas"></asp:MenuItem>
-                            <asp:MenuItem Text="Formularz" Value="Formularz" NavigateUrl="info.aspx"></asp:MenuItem>
-                        </Items>
-                    </asp:Menu>
+                       
                     </div>
                     </asp:TableCell>
                     <asp:TableCell runat="server" CssClass="d2">
                 <div id="mr-center">
-                    Ta strona została, wyjątkowo, napisana w układzie wykorzystującym tabele jako główny "grid" zamiast przyległych do siebie div'ów.
-                </div>
+                        <section id="main-section">
+                             <h2>Uzupełnij swoje dane</h2>
+        <asp:Label ID="uploadedLabel" runat="server" visible="false"></asp:Label>
+        <form id="userForm" runat="server">
+            
+                <p><asp:Label id="inputNameLabel" runat="server">Imię</asp:Label>
+                <asp:TextBox id="inputName" runat="server" type="text"/>
+                <asp:RequiredFieldValidator runat="server" id="reqName" controltovalidate="inputName" errormessage="Pole Imię nie może być puste!" />
+                <asp:RegularExpressionValidator ID="validName" runat="server" controltovalidate="inputName" ErrorMessage="Imię musi zaczynać się wielką literą!" ValidationExpression="[A-Z][a-z]+"/>
+                </p>
+                <br/>
+
+                <p><asp:Label id="inputEmailLabel" runat="server">E-mail</asp:Label>
+                <asp:TextBox id="inputEmail" runat="server" type="email"/>
+                <asp:RequiredFieldValidator runat="server" id="reqEmail" controltovalidate="inputEmail" errormessage="Pole E-mail nie może być puste!" />
+                </p>
+                <br/>
+                
+                <p><asp:Label id="inputEmail2Label" runat="server">Powtórz e-mail</asp:Label>
+                <asp:TextBox id="inputEmail2" runat="server" type="email"/>
+                <asp:CompareValidator runat="server" id="reqEmail2" controltovalidate="inputEmail2" controltocompare="inputEmail" errormessage="Podane adresy e-mail są różne!" />
+                </p>
+                <br/>
+
+                <p><asp:Label id="inputPhoneLabel" runat="server">Telefon</asp:Label>
+                <asp:TextBox id="inputPhone" runat="server" type="text"/>
+                <asp:RegularExpressionValidator ID="validPhone" runat="server" controltovalidate="inputPhone" ErrorMessage="Proszę podać poprawny numer telefonu" ValidationExpression="[0-9 +]+"/>
+                </p>
+                <br/>
+      
+
+                <p>
+                <asp:Label id="inputCaptchaLabel" runat="server">Wpisz liczbę od 5 do 115</asp:Label>
+                <asp:TextBox id="inputCaptcha" runat="server" type="text"/>
+                <asp:RequiredFieldValidator runat="server" id="reqCaptcha" controltovalidate="inputCaptcha" errormessage="Pole Captcha nie może być puste!" />
+                <asp:RangeValidator runat="server" id="validInputCaptcha" controltovalidate="inputCaptcha" type="Integer" minimumvalue="5" maximumvalue="115" errormessage="Jesteś robotem?" />
+                </p>   
+            <asp:Button runat="server" id="btnSubmitForm" text="Zapisz" />
+           
+       <p>
+          <asp:Label ID="outputLabel" runat="server" Visible="False"></asp:Label>
+       </p>
+        </form>
+
+                </section>
+            </div>
                     </asp:TableCell>
                     <asp:TableCell runat="server" CssClass="d3" BackColor="#999999">
                         <div id="mr-right">
@@ -85,6 +120,5 @@
                 </asp:TableRow>
             </asp:Table>
         </div>
-    </form>
 </body>
 </html>
