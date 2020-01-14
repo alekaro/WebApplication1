@@ -22,6 +22,7 @@
                 </asp:TableRow>
                 <asp:TableRow runat="server">
                     <asp:TableCell runat="server" CssClass="d1" BackColor="#FF9900">
+                    <div id="mr-left">
                         <asp:Menu ID="Menu1" runat="server">
                         <Items>
                             <asp:MenuItem Text="Historia gitary" Value="Historia gitary"></asp:MenuItem>
@@ -31,6 +32,7 @@
                             <asp:MenuItem Text="Formularz" Value="Formularz"></asp:MenuItem>
                         </Items>
                     </asp:Menu>
+                    </div>
                     </asp:TableCell>
                     <asp:TableCell runat="server" CssClass="d2">
                 <div id="mr-center">
