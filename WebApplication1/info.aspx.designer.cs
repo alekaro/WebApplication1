@@ -11,7 +11,7 @@ namespace WebApplication1
 {
 
 
-    public partial class index
+    public partial class info
     {
 
         /// <summary>
@@ -58,14 +58,5 @@ namespace WebApplication1
         /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Menu Menu1;
-
-        /// <summary>
-        /// Kontrolka imgurs.
-        /// </summary>
-        /// <remarks>
-        /// Pole generowane automatycznie.
-        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink imgurs;
     }
 }

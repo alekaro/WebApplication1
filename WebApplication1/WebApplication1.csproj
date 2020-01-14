@@ -152,6 +152,7 @@
     <Content Include="img\woww.jpg" />
     <Content Include="img\YAMAHA C-40 II cl.jpg" />
     <Content Include="img\YAMAHA F-310 acc.jpg" />
+    <Content Include="info.aspx" />
     <Content Include="styles.css" />
     <Content Include="index.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -215,6 +216,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="info.aspx.cs">
+      <DependentUpon>info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="info.aspx.designer.cs">
+      <DependentUpon>info.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

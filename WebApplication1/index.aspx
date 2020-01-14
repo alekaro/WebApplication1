@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="WebApplication1.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="WebApplication1.index" %>
 
 <!DOCTYPE html>
 
@@ -28,7 +28,7 @@
                             <asp:MenuItem Text="Historia gitary" Value="Historia gitary"></asp:MenuItem>
                             <asp:MenuItem Text="Kalkulator" Value="Kalkulator"></asp:MenuItem>
                             <asp:MenuItem Text="Sandbox" Value="Sandbox"></asp:MenuItem>
-                            <asp:MenuItem Text="O nas" Value="O nas"></asp:MenuItem>
+                            <asp:MenuItem Text="Informacje" Value="Informacje" NavigateUrl="info.aspx"></asp:MenuItem>
                             <asp:MenuItem Text="Formularz" Value="Formularz"></asp:MenuItem>
                         </Items>
                     </asp:Menu>
