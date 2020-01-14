@@ -124,8 +124,36 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="StyleSheet1.css" />
-    <Content Include="WebForm1.aspx" />
+    <Content Include="img\b-mayones.jpg" />
+    <Content Include="img\background-kerry.jpg" />
+    <Content Include="img\border.png" />
+    <Content Include="img\border0.png" />
+    <Content Include="img\dot.png" />
+    <Content Include="img\dot_1.png" />
+    <Content Include="img\e-ibanez.jpg" />
+    <Content Include="img\e-mayones.jpg" />
+    <Content Include="img\Epiphone Goth Thunderbird IV PB bass.jpg" />
+    <Content Include="img\guitar.png" />
+    <Content Include="img\guitarists\slide1.jpg" />
+    <Content Include="img\guitarists\slide2.jpg" />
+    <Content Include="img\guitarists\slide3.jpg" />
+    <Content Include="img\guitarists\slide4.jpg" />
+    <Content Include="img\guitarists\slide5.jpg" />
+    <Content Include="img\IBANEZ AEWC31BC-OPN acc.jpg" />
+    <Content Include="img\IBANEZ SR300EB-WK bass.jpg" />
+    <Content Include="img\jackson-gojira.jpg" />
+    <Content Include="img\kciuk.png" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\MAYONES Jabba Custom BB 5 PFFB bass.jpg" />
+    <Content Include="img\newsletter.png" />
+    <Content Include="img\och.png" />
+    <Content Include="img\pentagram.jpg" />
+    <Content Include="img\pick.png" />
+    <Content Include="img\woww.jpg" />
+    <Content Include="img\YAMAHA C-40 II cl.jpg" />
+    <Content Include="img\YAMAHA F-310 acc.jpg" />
+    <Content Include="styles.css" />
+    <Content Include="index.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -210,12 +238,12 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
