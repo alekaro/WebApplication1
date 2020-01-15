@@ -115,6 +115,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="form3.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -152,6 +153,8 @@
     <Content Include="img\woww.jpg" />
     <Content Include="img\YAMAHA C-40 II cl.jpg" />
     <Content Include="img\YAMAHA F-310 acc.jpg" />
+    <Content Include="form.aspx" />
+    <Content Include="form2.aspx" />
     <Content Include="info.aspx" />
     <Content Include="styles.css" />
     <Content Include="index.aspx" />
@@ -214,8 +217,29 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="form3.aspx.cs">
+      <DependentUpon>form3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form3.aspx.designer.cs">
+      <DependentUpon>form3.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="form.aspx.cs">
+      <DependentUpon>form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form.aspx.designer.cs">
+      <DependentUpon>form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="form2.aspx.cs">
+      <DependentUpon>form2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form2.aspx.designer.cs">
+      <DependentUpon>form2.aspx</DependentUpon>
     </Compile>
     <Compile Include="info.aspx.cs">
       <DependentUpon>info.aspx</DependentUpon>

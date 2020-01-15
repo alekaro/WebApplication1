@@ -29,7 +29,7 @@
                             <asp:MenuItem Text="Kalkulator" Value="Kalkulator"></asp:MenuItem>
                             <asp:MenuItem Text="Sandbox" Value="Sandbox"></asp:MenuItem>
                             <asp:MenuItem Text="Informacje" Value="Informacje" NavigateUrl="info.aspx"></asp:MenuItem>
-                            <asp:MenuItem Text="Formularz" Value="Formularz"></asp:MenuItem>
+                            <asp:MenuItem Text="Formularz" Value="Formularz" NavigateUrl="form3.aspx"></asp:MenuItem>
                         </Items>
                     </asp:Menu>
                     </div>
