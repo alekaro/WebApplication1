@@ -177,13 +177,13 @@ namespace WebApplication1
         protected global::System.Web.UI.WebControls.RangeValidator RangeValidator1;
 
         /// <summary>
-        /// Kontrolka btnSubmitForm.
+        /// Kontrolka Button1.
         /// </summary>
         /// <remarks>
         /// Pole generowane automatycznie.
         /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmitForm;
+        protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
         /// Kontrolka outputLabel.

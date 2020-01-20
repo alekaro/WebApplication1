@@ -12,16 +12,15 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // if this is not the first time the page is loading
-            // (i.e., the user has already submitted form data)
+            // jeżeli user submittował formularz
             if (IsPostBack)
             {
                 Validate(); // validate the form
 
-                // if the form is valid
+                // jeżeli się zwalidował
                 if (IsValid)
                 {
-                    // retrieve the values submitted by the user
+                    //przechwytuje wartości wpisane przez usera
                     string name = inputName.Text;
                     string email =inputEmail.Text;
                     string phone = inputPhone.Text;
@@ -33,8 +32,8 @@ namespace WebApplication1
                        String.Format("Imię: {0}{1}E-mail: {2}{1}Telefon: {3}",
                           name, "<br/>", email, phone);
                     outputLabel.Visible = true; // display the output message
-                } // end if
-            } // end if
-        } // end method Page_Load
+                } 
+            } 
+        } 
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="form3.aspx.cs" Inherits="WebApplication1.form3" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="shop.aspx.cs" Inherits="WebApplication1.Shop" %>
 
 <!DOCTYPE html>
 
@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
 <body>
-     <form id="form1" runat="server">
+    <form id="form1" runat="server">
         <div>
             <asp:Table ID="Table1" runat="server" Width="100%">
                 <asp:TableRow runat="server" BackColor="Black" ForeColor="White">
@@ -23,99 +23,37 @@
                 <asp:TableRow runat="server">
                     <asp:TableCell runat="server" CssClass="d1" BackColor="#FF9900">
                     <div id="mr-left">
-                       <asp:Menu ID="Menu1" runat="server">
+                        <asp:Menu ID="Menu1" runat="server">
                         <Items>
                             <asp:MenuItem Text="Historia gitary" Value="Historia gitary"></asp:MenuItem>
                             <asp:MenuItem Text="Kalkulator" Value="Kalkulator"></asp:MenuItem>
                             <asp:MenuItem Text="Sandbox" Value="Sandbox"></asp:MenuItem>
                             <asp:MenuItem Text="O nas" Value="O nas"></asp:MenuItem>
                             <asp:MenuItem Text="Formularz" Value="Formularz" NavigateUrl="info.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Koszyk" Value="Koszyk" NavigateUrl="Cart.aspx"></asp:MenuItem>
                         </Items>
                     </asp:Menu>
                     </div>
                     </asp:TableCell>
                     <asp:TableCell runat="server" CssClass="d2">
                 <div id="mr-center">
-                        <section id="main-section">
-            <h2>Uzupełnij swoje dane</h2>
-        <div id="divform">
-       <table align="left" id="tableform">
+                    <section>
+        <h2>Dostępne artykuły</h2>
+<asp:Label ID="cartCount" runat="server" Text=""></asp:Label>
+        
+            <asp:RadioButtonList ID="category" runat="server" AutoPostBack="True">
+              <asp:ListItem Value="elektryki">Gitary elektryczne:</asp:ListItem>
+              <asp:ListItem Value="akustyki">Gitary akustyczne</asp:ListItem>
+            </asp:RadioButtonList>
+            
+            <asp:Label ID="categoryLabel" runat="server" Visible="false"><h2>Dostępne produkty:</h2></asp:Label>
+            <asp:CheckBoxList ID="productList" runat="server" visible="false"></asp:CheckBoxList>
+            <asp:Button ID="btnAddCart" runat="server" Visible="false" text="Dodaj do koszyka"/>
 
-          <tr>
-
-             <td valign="top" align="left">
-                Imię:</td>
-             <td valign="top" align="left">
-                <asp:TextBox ID="inputName" runat="server"></asp:TextBox>
-                <br />
-                <asp:RequiredFieldValidator ID="reqName" runat="server" 
-                   ControlToValidate="inputName" Display="Dynamic" 
-                   ErrorMessage="Pole imię nie może być puste!"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" controltovalidate="inputName" ErrorMessage="Imię musi zaczynać się wielką literą!" ValidationExpression="[A-Z][a-z]+"/>
-             </td>
-          </tr>
-
-
-          <tr>
-             <td valign="top" align="left">
-                E-mail:</td>
-             <td valign="top" align="left">
-                <asp:TextBox ID="inputEmail" runat="server"></asp:TextBox>
-                
-                 <asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator1" controltovalidate="inputEmail" errormessage="Pole E-mail nie może być puste!" />
-             </td>
-          </tr>
-
-           <tr>
-             <td valign="top" align="left">
-                Powtórz e-mail:</td>
-             <td valign="top" align="left">
-                <asp:TextBox ID="inputEmail2" runat="server"></asp:TextBox>
-                
-                 <asp:CompareValidator runat="server" id="CompareValidator1" controltovalidate="inputEmail2" controltocompare="inputEmail" errormessage="Podane adresy e-mail są różne!" />
-             </td>
-          </tr>
-
-
-          <tr>
-             <td valign="top" align="left">
-                Numer telefonu:</td>
-             <td valign="top" align="left">
-                <asp:TextBox ID="inputPhone" runat="server"></asp:TextBox>
-                
-                <asp:RequiredFieldValidator ID="phoneRequiredFieldValidator" runat="server" 
-                   ControlToValidate="inputPhone" Display="Dynamic" 
-                   ErrorMessage="Proszę wpisać swój numer telefonu" ></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" controltovalidate="inputPhone" ErrorMessage="Proszę podać poprawny numer telefonu" ValidationExpression="[0-9 +]+"/>
-             </td>
-          </tr>
-
-           <tr>
-             <td valign="top" align="left">
-                Wpisz liczbę od 8 do 138:</td>
-             <td valign="top" align="left">
-                <asp:TextBox ID="inputCaptcha" runat="server"></asp:TextBox>
-                <br />
-                <asp:RequiredFieldValidator runat="server" id="RequiredFieldValidator2" controltovalidate="inputCaptcha" errormessage="Pole Captcha nie może być puste!" />
-                <asp:RangeValidator runat="server" id="RangeValidator1" controltovalidate="inputCaptcha" type="Integer" minimumvalue="8" maximumvalue="138" errormessage="Jesteś robotem?" />
-             </td>
-          </tr>
-          <tr>
-              <td>
-                  <asp:Button runat="server" id="Button1" text="Zapisz" />
-              </td>
-           </tr>
-
-       </table>
-       </div>
-          
-           
-       <p>
-          <asp:Label ID="outputLabel" runat="server" Visible="False"></asp:Label>
-       </p>
-
-                </section>
-            </div>
+            <asp:Label ID="Message" runat="server" Visible="true"></asp:Label>
+  
+    </section>
+                    </div>
                     </asp:TableCell>
                     <asp:TableCell runat="server" CssClass="d3" BackColor="#999999">
                         <div id="mr-right">
@@ -163,6 +101,6 @@
                 </asp:TableRow>
             </asp:Table>
         </div>
-     </form>
+    </form>
 </body>
 </html>
