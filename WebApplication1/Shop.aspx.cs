@@ -10,14 +10,12 @@ namespace WebApplication1
 {
     public partial class Item
     {
-        public string name;
-        public double price;
-        public string image;
+        public string nazwa;
+        public double cena;
     }
 
     public partial class CartItem
     {
-        public int quantity;
         public Item item;
     }
 
@@ -39,11 +37,11 @@ namespace WebApplication1
             listOfProducts["akustyki"] = akustyki;
             
             Hashtable products = new Hashtable();
-            products["elektryk1"] = (new Item { name = "Ibanez GRG121DX", price = 854, image = "elektryki/wand1.jpg" });
-            products["elektryk2"] = (new Item { name = "Fender Squier Bullet", price = 569, image = "elektryki/wand2.png" });
+            products["elektryk1"] = (new Item { nazwa = "Ibanez GRG121DX", cena = 854 });
+            products["elektryk2"] = (new Item { nazwa = "Fender Squier Bullet", cena = 569 });
            
-            products["akustyk1"] = (new Item { name = "Fender FA-115 Dread Pack", price = 399, image = "akustyki/broom1.jpg" });
-            products["akustyk2"] = (new Item { name = "Yamaha C-40 BL", price = 629, image = "akustyki/broom2.jpg" });
+            products["akustyk1"] = (new Item { nazwa = "Fender FA-115 Dread Pack", cena = 399 });
+            products["akustyk2"] = (new Item { nazwa = "Yamaha C-40 BL", cena = 629 });
            
 
             if (IsPostBack)
@@ -54,18 +52,14 @@ namespace WebApplication1
                 }
 
                 cart = (ArrayList)System.Web.HttpContext.Current.Session["cart"];
-                //foreach (CartItem citem in cart)
-                //{
-                //    Message.Text += "w koszyku";
-                //}
+                
 
                 for (int i = 0; i < productList.Items.Count; i++)
                 {
                     if (productList.Items[i].Selected)
                     {
-                        //Message.Text += productList.Items[i].Value + "<br />";
 
-                        cart.Add(new CartItem { quantity = 1, item = (Item)products[productList.Items[i].Value] });
+                        cart.Add(new CartItem { item = (Item)products[productList.Items[i].Value] });
                     }
 
                 }
@@ -75,10 +69,10 @@ namespace WebApplication1
                 btnAddCart.Visible = true;
                 productList.Items.Clear();
                 foreach (String id in (ArrayList)listOfProducts[Request.Params["category"]])
-                    productList.Items.Add(new ListItem("<div><img class=\"small\" src=\"Images/" + ((Item)products[id]).image + "\" /><p><b>" + ((Item)products[id]).name + "</b> (" + ((Item)products[id]).price + "zł)</p></div>", id));
+                    productList.Items.Add(new ListItem("<div><p><b>" + ((Item)products[id]).nazwa + "</b> (" + ((Item)products[id]).cena + "zł)</p></div>", id));
 
 
-                //((ArrayList)Session["cart"]).Add(Item);
+               
 
 
             }

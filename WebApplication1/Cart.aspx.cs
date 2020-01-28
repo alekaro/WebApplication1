@@ -11,8 +11,8 @@ namespace WebApplication1
     public class Shipping
     {
         public string id;
-        public string name;
-        public double price;
+        public string nazwa;
+        public double cena;
     }
 
     struct Order
@@ -24,9 +24,9 @@ namespace WebApplication1
         protected void Page_Load(object sender, EventArgs e)
         {
             ArrayList shippings = new ArrayList();
-            shippings.Add(new Shipping { id = "1", name = "Kurier DHL", price = 10 });
-            shippings.Add(new Shipping { id = "2", name = "Poczta polska", price = 66 });
-            shippings.Add(new Shipping { id = "3", name = "Paczkomat", price = 8 });
+            shippings.Add(new Shipping { id = "1", nazwa = "Kurier DHL", cena = 10 });
+            shippings.Add(new Shipping { id = "2", nazwa = "Poczta polska", cena = 66 });
+            shippings.Add(new Shipping { id = "3", nazwa = "Paczkomat", cena = 8 });
 
             if (System.Web.HttpContext.Current.Session["cart"] == null)
             {
@@ -42,7 +42,7 @@ namespace WebApplication1
                 shippingList.Items.Add(new ListItem { Text = "wybierz", Value = "" });
                 foreach (Shipping ship in shippings)
                 {
-                    shippingList.Items.Add(new ListItem { Text = ship.name, Value = ship.id });
+                    shippingList.Items.Add(new ListItem { Text = ship.nazwa, Value = ship.id });
                 }
             }
 
@@ -65,20 +65,21 @@ namespace WebApplication1
             double cena = 0;
             foreach (CartItem cit in cart)
             {
-                cena = cena + cit.item.price;
+                cena = cena + cit.item.cena;
             }
 
             summary.Text = "Cena z dostawą: " + cena;
             summaryProducts.Text = "Cena produktów: " + cena;
 
-            if (IsPostBack && Request.Form["__EVENTTARGET"] != "shippingList" && cart.Count > 0)
+            //wcisniety button, wykonane zakupy
+            if (IsPostBack && Request.Form["__EVENTTARGET"] != "shippingList" && cart.Count > 0) 
             {
                 string chosenShip = Request.Params["shippingList"];
                 Shipping chS = null;
 
                 btnOrder.Visible = false;
                 shippingList.Visible = false;
-
+                summary.Visible = false;
                 congrats.Visible = true;
                 wybranaDostawa.Visible = true;
                 foreach (Shipping sh in shippings)
@@ -89,8 +90,8 @@ namespace WebApplication1
                         break;
                     }
                 }
-                wybranaDostawa.Text = "Wybrana dostawa: " + chS.name;
-                summaryProducts.Text = "Cena z dostawą: " + (cena + chS.price);
+                wybranaDostawa.Text = "Wybrana dostawa: " + chS.nazwa;
+                summaryProducts.Text = "Cena z dostawą: " + (cena + chS.cena);
                 System.Web.HttpContext.Current.Session["cart"] = null;
 
             }
@@ -109,7 +110,7 @@ namespace WebApplication1
             {
                 if (sh.id == ship)
                 {
-                    cena = sh.price;
+                    cena = sh.cena;
                     break;
                 }
             }
@@ -118,7 +119,7 @@ namespace WebApplication1
 
             foreach (CartItem cit in cart)
             {
-                cena = cena + cit.item.price;
+                cena = cena + cit.item.cena;
             }
 
             summary.Text = "Cena z dostawą: " + cena;
@@ -127,9 +128,9 @@ namespace WebApplication1
         protected ArrayList getShippings()
         {
             ArrayList shippings = new ArrayList();
-            shippings.Add(new Shipping { id = "1", name = "Kurier DHL", price = 10 });
-            shippings.Add(new Shipping { id = "2", name = "Poczta polska", price = 66 });
-            shippings.Add(new Shipping { id = "3", name = "Paczkomat", price = 8 });
+            shippings.Add(new Shipping { id = "1", nazwa = "Kurier DHL", cena = 10 });
+            shippings.Add(new Shipping { id = "2", nazwa = "Poczta polska", cena = 66 });
+            shippings.Add(new Shipping { id = "3", nazwa = "Paczkomat", cena = 8 });
 
             return shippings;
         }

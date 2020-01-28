@@ -30,6 +30,7 @@
                             <asp:MenuItem Text="Sandbox" Value="Sandbox"></asp:MenuItem>
                             <asp:MenuItem Text="O nas" Value="O nas"></asp:MenuItem>
                             <asp:MenuItem Text="Formularz" Value="Formularz" NavigateUrl="info.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Sklep" Value="Sklep" NavigateUrl="Shop.aspx"></asp:MenuItem>
                         </Items>
                     </asp:Menu>
                     </div>
@@ -39,12 +40,12 @@
                     <section>
                   <h2>Koszyk</h2>
         <asp:Label ID="congrats" runat="server" Visible="false" Text="Złożono zamówienie!"></asp:Label>
-        <br />
+        <br/>
 
         
 
      <asp:ListView ID="cartList" runat="server" 
-                GroupItemCount="4"
+                GroupItemCount="2"
                 ItemType="WebApplication1.CartItem">
 
                 
@@ -56,9 +57,11 @@
                         </tr>
                     </table>
                 </EmptyDataTemplate>
+
                 <EmptyItemTemplate>
                     <td/>
                 </EmptyItemTemplate>
+
                 <GroupTemplate>
                     <tr id="itemPlaceholderContainer" runat="server">
                         <td id="itemPlaceholder" runat="server"></td>
@@ -66,13 +69,10 @@
                 </GroupTemplate>
                 <ItemTemplate>
                    
-                        <div style="min-height: 100px;">
+                        <div style="min-height: 35px;">
                           
-                                    
-                                        <img alt="produkt" class="small" src="Images/<%#:Item.item.image%>"
-                                             />
                            <p>
-                                            <%#:Item.item.name%> (<%#:Item.item.price%> zł)
+                                            <%#:Item.item.nazwa%> (<%#:Item.item.cena%> zł)
                                         </p>
                                     
                               
@@ -89,16 +89,19 @@
                 </LayoutTemplate>
             </asp:ListView>
           
-<asp:DropDownList AutoPostBack="true" runat="server" ID="shippingList" 
-                CssClass="text" OnSelectedIndexChanged="myListDropDown_Change" Visible="false"/>
+<asp:DropDownList AutoPostBack="true" runat="server" ID="shippingList"  
+           CssClass="text" OnSelectedIndexChanged="myListDropDown_Change" Visible="false"/>
+
+                        <%--lista rozwijalna, dostawa z autopostbackiem--%>
+
                  <asp:Label ID="wybranaDostawa" runat="server" Visible="false" Text=""></asp:Label>
- <br />
+ <br/>
   
   <asp:Label ID="summaryProducts" runat="server" Visible="false" Text="Label"></asp:Label>
-  <br />
+  <br/>
   <asp:Label ID="summary" runat="server" Visible="false" Text="Label"></asp:Label>
            
-<br />
+<br/>
              <asp:Button ID="btnOrder" runat="server" Visible="false" text="Złóż zamówienie"/>
             
             </section>
